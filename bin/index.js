@@ -32,5 +32,4 @@ fs.writeFile(dstPath, flowConfig, function(error) {
         return
     }
     spinner.succeed('Scaffholding Done')
-    installFlowBin()
 })
