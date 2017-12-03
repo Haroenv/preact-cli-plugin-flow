@@ -14,17 +14,6 @@ const srcPath = path.join(cwd, '.flowconfig')
 const dstPath = path.join(root, '.flowconfig')
 const flowConfig = fs.readFileSync(srcPath)
 
-function installFlowBin() {
-    spinner.start('Installing Dependencies')
-    exec('npm install --save-dev flow-bin', { cwd: root }, error => {
-        if (error) {
-            spinner.fail(`Error npm i: ${error}`)
-            return
-        }
-        spinner.succeed('Dependencies installed')
-    })
-}
-
 spinner.start('Flow is scaffholding')
 fs.writeFile(dstPath, flowConfig, function(error) {
     if (error) {
